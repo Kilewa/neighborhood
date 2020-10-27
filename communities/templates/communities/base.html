@@ -1,12 +1,94 @@
+{% load bootstrap4 %} 
+
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neighborhood</title>
-</head>
-<body>
-    {% block content %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Neighbourhood</title>
+    <link
+      rel="icon"
+      href="https://assets.awwwards.com/assets/images/favicon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design for Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <br />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
+  </head>
+
+  <body>
+    {% include 'communities/navbar.html' %} 
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+      <!-- Footer -->
+      <footer class="page-footer font-small unique-color-dark pt-4">
+        <!-- Footer Elements -->
+        <div class="container">
+          <!-- Call to action -->
+          <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+              <h5 class="mb-1">
+                The Neighborhood <i class="fas fa-user"></i> <br />
+                Keeping the whole Neighborhood updated
+              </h5>
+            </li>
+            <li class="list-inline-item">
+              <a
+                href="{% url 'register'%}"
+                class="btn btn-outline-white btn-rounded"
+                >Sign up!</a
+              >
+            </li>
+          </ul>
+          <!-- Call to action -->
+        </div>
+        <!-- Footer Elements -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+          © 2020 Copyright:
+          <a> George Kilewa</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+
+    {% block scripts %}
+    <!-- jQuery -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!-- Material Design for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.16/js/mdb.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
     {% endblock %}
-</body>
+  </body>
 </html>
