@@ -4,5 +4,5 @@ from django.conf.urls import url
 
 
 urlpatterns = [
-    path('', views.home,name='home'),
+    path('', views.HomePage.as_view(),name='home'),
 ]
