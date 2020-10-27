@@ -1,8 +1,9 @@
-rom django.contrib.auth import get_user_model
+from django import forms
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 
-class UserCreateForm(UserCreationForm):
+class UserRegisterForm(UserCreationForm):
     first_name = forms.CharField(label=False, widget=forms.TextInput(attrs={"class":"form-control",
                                                                 "placeholder":"First Name"}))
     last_name = forms.CharField(label=False, widget=forms.TextInput(attrs={"class":"form-control",
@@ -16,10 +17,5 @@ class UserCreateForm(UserCreationForm):
     password2 = forms.CharField(label=False, widget=forms.PasswordInput(attrs={"class":"form-control",
                                                                 "placeholder":"Confirm Password"}))
     class Meta:
-        fields = ("username", "email", "password1", "password2")
-        model = get_user_model()
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["username"].label = "Username"
-        self.fields["email"].label = "Email address"
+        model = User
+        fields = ('username', 'first_name', 'last_name','email', 'password1', 'password2',)

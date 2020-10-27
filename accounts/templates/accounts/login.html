@@ -1,0 +1,39 @@
+{% extends "communities/base.html" %}
+{% load bootstrap4 %}
+{% load static%}
+{% load crispy_forms_tags %}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
+{% endblock%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="form-field">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Dont have an account? <a class="ml-2" href="{% url 'signup' %}">Sign up</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
