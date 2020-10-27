@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'accounts',
     'communities',
     'posts',
+    'crispy_forms',
+    'tinymce',
     'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',

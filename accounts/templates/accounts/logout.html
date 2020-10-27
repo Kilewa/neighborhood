@@ -1,0 +1,33 @@
+{% extends "rateapp/base.html" %}
+{% load bootstrap4 %}
+{% load static%}
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
+{% endblock%}
+
+{% block navbar%}
+{% endblock%}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="landing-page">
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="form-field">
+                    <fieldset class="form-group">
+                    </fieldset>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        You have been logged out!<a style="font-size:16px;" class="ml-2" href="{% url 'login' %}">Login Again</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
