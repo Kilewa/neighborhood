@@ -32,9 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts',
-    'communities',
-    'posts',
+    'neighbourhoods',
+    'users',
     'crispy_forms',
     'tinymce',
     'bootstrap4',
