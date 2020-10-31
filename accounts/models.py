@@ -1,27 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
 from PIL import Image
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from tinymce.models import HTMLField
+from communities.models import Neighbourhood
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,null=True,blank=True)
-    bio = HTMLField(max_length=300,default="No bio")
-    profile_photo = models.ImageField(
-        default='default.jpg', upload_to='profile_pics')
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=20)
+    email = models.EmailField(max_length=200)
+    neighborhood = models.ForeignKey(Neighbourhood,null=True) 
+    
+    @receiver(post_save, sender=User)
+    def create_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
 
-    def __str__(self):
-        return f'{self.user.username} Profile'
-
-    def save_profile(self):
-        '''
-        Saves profile instance to db
-        '''
-        self.save()
-
+    @receiver(post_save, sender=User) 
+    def save_profile(sender,instance,**kwargs):
+        instance.profile.save() 
+        
+        
     @classmethod
     def get_by_id(cls,id):
         profile = Profile.objects.get(user = id)
@@ -31,6 +31,10 @@ class Profile(models.Model):
     def filter_by_id(cls,id): 
         profile = Profile.objects.filter(user = id).first()
         return profile
+    
+        
+    def __str__(self):
+        return self.title
 
     @receiver(post_save, sender=User)
     def create_profile(sender, instance, created, **kwargs):
