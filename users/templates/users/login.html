@@ -4,16 +4,15 @@
 {% load crispy_forms_tags %}
 {% block styles %}
 {% bootstrap_css %}
-<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css"/>
 {% endblock%}
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid ">
     <div class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-sm-4 col-md-4 col-lg-4 signUp">
             <div class="form-field">
                 <form method="POST">
                     {% csrf_token %}

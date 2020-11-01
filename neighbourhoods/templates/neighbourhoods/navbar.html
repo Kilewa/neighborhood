@@ -23,12 +23,12 @@
             </form>
         </div>
         <div id="logo">
-            <a href="{% url 'home' %}" id="brand">THE NEIGHBORHOOD </a>
+            <a href="{% url 'hoodPage' %}" id="brand">THE NEIGHBOURHOOD </a>
         
         </div>
         <div class="nav-right">
         {% if user.is_authenticated %}
-            <a href="{% url 'hoodPage' %}" class="accounts">Neighborhoods</a>
+            <a href="{% url 'hoodPage' %}" class="accounts">Neighbourhoods</a>
 
             <a  href="{% url 'profile' username=user %}" class="accounts">
                 <i class="fas fa-user"></i>Profile</a>

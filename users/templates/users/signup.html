@@ -8,11 +8,11 @@
 {% endblock%}
 {% block content %}
 
-<div class="container">
+<div class="container-fluid cont-bg">
     <div class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-sm-4 col-md-4 col-lg-4 signUp">
             <div class="landing-page">
                 <h2>SIGN UP</h2>
             </div>
@@ -28,7 +28,7 @@
                 </form>
                 <div class="border-top pt-3">
                     <small class="text-muted">
-                        Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        Already Have An Account? <a class="ml-2 login" href="{% url 'login' %} ">Sign In</a>
                     </small>
                 </div>
             </div>

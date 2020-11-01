@@ -37,13 +37,29 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 73vh;
+    height: 82vh;
 }
 .main {
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    }
+}
+
+.login{
+    font-size: 18px;
+}
+
+.signUp{
+    background-color: thistle;
+    padding: 10px 100px 10px 100px;
+    font-family: 'Viga', sans-serif;
+    width: 500px;
+}
+
+.cont-bg{
+    background-color: tomato;
+}
+
 
 .nav-set{
     background-color: #573d57;
@@ -64,7 +80,7 @@
 .banner{
     opacity: 0.8;
     background-color: #140114;
-    height: 73vh;
+    height: 82vh;
 }
 
 .heading{

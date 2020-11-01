@@ -40,6 +40,15 @@
 
 <body>
     {% include 'neighbourhoods/navbar.html' %} 
+    <div role="main" class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
     {% block content %}{% endblock %}
 
     {% block scripts %}

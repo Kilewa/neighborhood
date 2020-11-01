@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 class HomePage(TemplateView):
     template_name = 'neighbourhoods/index.html'
 
-
+@login_required
 def hoodPage(request):
     hoods = Neighbourhood.objects.all()
     
