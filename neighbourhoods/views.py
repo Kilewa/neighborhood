@@ -14,6 +14,40 @@ def index(request):
     return render(request,'index.html',{"hoods":hoods})
 
 @login_required(login_url='/accounts/login/')
+def profile(request,username):
+    profile = User.objects.get(username=username)
+    
+    try:
+        profile_details = Profile.get_by_id(profile.id)
+    except:
+        profile_details = Profile.filter_by_id(profile.id)
+    businesses = Business.get_profile_businesses(profile.id)
+
+    business_form = BusinessForm(request.POST)
+    if request.method == 'POST':
+        if business_form.is_valid():
+            business = business_form.save(commit=False)
+            business.user = request.user
+            business.location = location
+            business.save()
+        return redirect('single_hood',location)
+    
+    else:
+        business_form = BusinessForm()
+    context = {
+        "profile":profile,
+        "profile_details":profile_details
+        "businesses":businesses, 
+        "business_form":business_form,
+    }
+    
+    return render(request, 'profile.html',context) 
+
+
+
+
+
+@login_required(login_url='/accounts/login/')
 def single_hood(request,location):
 
     location = Neighbourhood.objects.get(name=location) 
