@@ -28,3 +28,11 @@
     text-decoration: none;
     color: #aa6262;
 }
+
+.bg-img{
+    background-image: url('../imgs/bg.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60vh;
+}
