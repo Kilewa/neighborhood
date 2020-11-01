@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="" id="home">
-    <h3 class="pink-text text-center">
+    <h3 class="text-info text-center">
         NEIGHBOURHOODS
         <hr />
     </h3>
@@ -34,7 +34,7 @@
             <p class="card-text">{{hood.location}}</p>
             <a
             href="{% url 'single_hood' location=hood.name %}"
-            class="btn btn-pink"
+            class="btn btn-info"
             >READ MORE</a
             >
         </div>

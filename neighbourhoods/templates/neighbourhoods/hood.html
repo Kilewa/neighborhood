@@ -1,13 +1,9 @@
 {% extends 'neighbourhoods/base.html' %}
 {% load bootstrap4 %}
 {% block content %}
-<style>
-    .main {
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-</style>
+
+
+
 <div class="row" style="margin:10px;">
     <div class="col-md-4">
         <div class="card">
@@ -26,7 +22,7 @@
                 <h4 class="card-title">{{location.name}}</h4>
                 <!-- Text -->
                 <p class="card-text">{{location.location}}</p>
-                <button class="btn btn-pink" type="button" data-toggle="modal" data-target="#BusinessForm">Add A
+                <button class="btn btn-info" type="button" data-toggle="modal" data-target="#BusinessForm">Add A
                     Business</button> 
                 <div class="modal fade" id="BusinessForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                     aria-hidden="true">
@@ -120,9 +116,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 {% endblock %}

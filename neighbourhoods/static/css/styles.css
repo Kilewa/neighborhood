@@ -39,6 +39,11 @@
     background-repeat: no-repeat;
     height: 73vh;
 }
+.main {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 
 .nav-set{
     background-color: #573d57;
