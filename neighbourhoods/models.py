@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import Profile
+from django.contrib.auth.models import User
 
 
 class Neighbourhood(models.Model):
@@ -52,7 +52,6 @@ class Business(models.Model):
     @classmethod
     def get_profile_businesses(cls, user):
         business = Business.objects.filter(user__pk=user)
-        print(business)
         return business
 
     def __str__(self):
@@ -72,7 +71,6 @@ class Posts(models.Model):
     @classmethod
     def get_location_posts(cls, location):
         posts = Posts.objects.filter(location__pk=location)
-        print(posts)
         return posts
 
     def __str__(self):
