@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from django.views.generic import TemplateView
-from .models import Posts,Profile,Neighbourhood,Business
+from .models import Posts,Neighbourhood,Business
+from users.models import Profile
+from django.contrib.auth.decorators import login_required
 from .forms import BusinessForm,PostsForm
 from django.contrib.auth.models import User
 
@@ -8,12 +10,12 @@ class HomePage(TemplateView):
     template_name = 'neighbourhoods/index.html'
 
 
-def index(request):
+def hoodPage(request):
     hoods = Neighbourhood.objects.all()
     
-    return render(request,'index.html',{"hoods":hoods})
+    return render(request,'hoods.html',{"hoods":hoods})
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def profile(request,username):
     profile = User.objects.get(username=username)
     
@@ -36,7 +38,7 @@ def profile(request,username):
         business_form = BusinessForm()
     context = {
         "profile":profile,
-        "profile_details":profile_details
+        "profile_details":profile_details,
         "businesses":businesses, 
         "business_form":business_form,
     }
@@ -47,7 +49,7 @@ def profile(request,username):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required
 def single_hood(request,location):
 
     location = Neighbourhood.objects.get(name=location) 
