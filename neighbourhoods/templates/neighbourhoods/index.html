@@ -1,14 +1,26 @@
-{% extends 'neighbourhoods/base.html' %}
-
-{% block content %}
+{% extends 'neighbourhoods/base.html' %} {% block content %}
 
 <div class="background">
     <div class="bg-img">
-        <h3>WELCOME TO NEIGHBOURHOOD WATCH</h3>
-        <p>Neighborhood watch is the private social network for your neighborhood, <br>
-            with verified residents.</p>
-            <br><br>
-        <p>Sign up today to stay in the know and start connecting with your neighbors.</p>
+        <div class="banner">
+        <h3 class="text-center heading">WELCOME TO NEIGHBOURHOOD WATCH</h3>
+        <p class="text-center txt">
+            Neighborhood watch is the private social network for your neighborhood,
+            <br />
+            with verified residents.
+        </p>
+        <br /><br />
+        <p class="text-center txt">
+            Sign up today to stay in the know and start connecting with your
+            neighbors.
+        </p>
+        </div>
+
+        <a href="{% url 'register' %}" class="btn-pos"
+        ><button class="badge badge-pill badge-primary btn-pos">
+            Join Now
+        </button></a
+        >
     </div>
 </div>
 

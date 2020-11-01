@@ -30,9 +30,32 @@
 }
 
 .bg-img{
-    background-image: url('../imgs/bg.jpeg');
+    background-image: url('../imgs/sample-slide-2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 73vh;
+}
+
+.nav-set{
+    background-color: #573d57;
+}
+
+.btn-pos{
+    position: absolute;
+    left:30%;
+    padding: 20px !important;
+    width: 35%;
+    outline: none !important;
+    border: none;
+
+}
+
+.banner{
+    opacity: 0.8;
+    background-color: #553c55;
+}
+
+.heading{
+    color: blue;
 }
