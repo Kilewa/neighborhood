@@ -26,7 +26,7 @@ class Profile(models.Model):
         return profile
 
     def __str__(self):
-        return self.title
+        return self.name
 
     @receiver(post_save, sender=User)
     def create_profile(sender, instance, created, **kwargs):
