@@ -13,7 +13,7 @@ class HomePage(TemplateView):
 def hoodPage(request):
     hoods = Neighbourhood.objects.all()
     
-    return render(request,'hoods.html',{"hoods":hoods})
+    return render(request,'neighbourhoods/hoods.html',{"hoods":hoods})
 
 @login_required
 def profile(request,username):
@@ -43,7 +43,7 @@ def profile(request,username):
         "business_form":business_form,
     }
     
-    return render(request, 'profile.html',context) 
+    return render(request, 'users/profile.html',context) 
 
 
 
@@ -91,5 +91,5 @@ def single_hood(request,location):
                 }
     
     
-    return render(request,'hood.html',context)     
+    return render(request,'neighbourhoods/hood.html',context)     
 
