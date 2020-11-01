@@ -10,7 +10,7 @@ from django.dispatch import receiver
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,blank=True)
     profile_photo = models.ImageField(
-        default='default.jpg', upload_to='profile_pics')
+        default='default.png', upload_to='profile_pics')
     name = models.CharField(max_length=20)
     email = models.EmailField(max_length=200)
     neighborhood = models.ForeignKey(Neighbourhood, null=True,on_delete=models.CASCADE)
